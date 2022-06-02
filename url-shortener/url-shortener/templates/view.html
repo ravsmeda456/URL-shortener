@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+
+{% block main %}
+<div class='ps-3 pe-3 mt-5'>
+    <form  method='GET' align='center' >
+        <table class="table table-bordered border border-dark ">
+            <thead>
+                <tr>
+                    <th scope='col'></th>
+                    <th scope='col'>Actual URL</th>
+                    <th scope='col'>Shortened URL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for url in urls %}
+                    <tr>
+                        <th scope='row'>{{url.id}}</th>
+                        <td><a>{{url.actual_url}}</a></td>
+                        <td><a href='/url/{{url.short_url}}'>{{url.short_url}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+</div>
+{% endblock %}

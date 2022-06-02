@@ -1,0 +1,23 @@
+{% for message in messages %}
+{% if message.tags == 'success' %}
+    <div class="mt-5 d-block btn btn-success ms-5 me-5">
+        {{message}}
+    </div>
+{% elif message.tags == 'info'%}
+    <div class="mt-5 d-block btn btn-info ms-5 me-5">
+        {{message}}
+    </div>
+{% elif message.tags == 'error'%}
+    <div class="mt-5 d-block btn btn-danger ms-5 me-5">
+        {{message}}
+    </div>
+{% elif message.tags == 'warning'%}
+    <div class="mt-5 d-block btn btn-warning ms-5 me-5">
+        {{message}}
+    </div>
+{% else%}
+    <div class="mt-5 d-block btn ms-5 me-5">
+        {{message}}
+    </div>
+{% endif %}
+{% endfor %}
